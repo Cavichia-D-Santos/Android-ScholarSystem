@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="projetoAndroid.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:projetoAndroid"
+    xmlns:pages="clr-namespace:projetoAndroid.Pages"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="True"
+    Title="projetoAndroid">
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+
+        <ShellContent
+            Title="Página Principal"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="mainPage" />
+
+        <ShellContent
+            Title="Períodos"
+            ContentTemplate="{DataTemplate pages:periodos}"
+            Route="periodos" />
+
+        <ShellContent
+            Title="Disciplinas"
+            ContentTemplate="{DataTemplate pages:disciplinas}"
+            Route="disciplinas" />
+
+        <ShellContent
+            Title="Cursos"
+            ContentTemplate="{DataTemplate pages:cursos}"
+            Route="cursos" />
+    </FlyoutItem>
+
+</Shell>
