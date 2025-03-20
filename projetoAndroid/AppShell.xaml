@@ -30,6 +30,12 @@
             Title="Cursos"
             ContentTemplate="{DataTemplate pages:cursos}"
             Route="cursos" />
+
+        <ShellContent
+            Title="Sobre"
+            ContentTemplate="{DataTemplate pages:sobrePage}"
+            Route="sobre" />
+
     </FlyoutItem>
 
 </Shell>
