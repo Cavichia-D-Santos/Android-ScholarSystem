@@ -3,10 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="projetoAndroid.Pages.adicionarPeriodo"
              Title="adicionarPeriodo">
-    <VerticalStackLayout>
+    
+    <VerticalStackLayout Padding="30"
+                         Spacing="20">
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            x:Name="lblNomePeriodo"
+            Text="NOME DO PERÍODO"/>
+        <Entry
+            x:Name="etrNomePeriodo"
+            Placeholder="Escreva aqui"/>
+
+        <Label 
+            x:Name="lblSiglaPeriodo"
+            Text="SIGLA"/>
+        <Entry
+            x:Name="etrSiglaPeriodo"
+            Placeholder="Escreva aqui"/>
+
+        <Button
+            x:Name="btnConfirmaPeriodo"
+            Text="CONFIRMAR"/>
+
+        <Button
+            x:Name="btnDescartaPeriodo"
+            Text="DESCARTAR"/>
+
     </VerticalStackLayout>
 </ContentPage>
