@@ -3,10 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="projetoAndroid.Pages.editarDisciplina"
              Title="editarDisciplina">
-    <VerticalStackLayout>
+    
+    <VerticalStackLayout Padding="30"
+                     Spacing="20">
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    x:Name="lblEditaNomeDisciplina"
+    Text="NOME DA DISCIPLINA"/>
+        <Entry
+    x:Name="etrEditaNomeDisciplina"
+    Placeholder="Escreva aqui"/>
+
+        <Label 
+    x:Name="lblEditaSiglaDisciplina"
+    Text="SIGLA"/>
+        <Entry
+    x:Name="etrEditaSiglaDisciplina"
+    Placeholder="Escreva aqui"/>
+
+        <Label 
+        x:Name="lblEditaObsDisciplina"
+        Text="OBSERVAÇÕES"/>
+        <Entry
+        x:Name="etrEditaObsDisciplina"
+        Placeholder="Escreva aqui"/>
+
+        <Button
+    x:Name="btnConfirmaDisciplina"
+    Text="CONFIRMAR"/>
+
+        <Button
+    x:Name="btnDescartaDisciplina"
+    Text="DESCARTAR"/>
     </VerticalStackLayout>
 </ContentPage>
