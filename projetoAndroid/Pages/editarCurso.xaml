@@ -3,10 +3,62 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="projetoAndroid.Pages.editarCurso"
              Title="editarCurso">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="30"
+                     Spacing="20">
+            <Label 
+            x:Name="lblEditaNomeCurso"
+            Text="NOME DO CURSO"/>
+            <Entry
+            x:Name="etrEditaNomeCurso"
+            Placeholder="Escreva aqui"/>
+
+            <Label 
+            x:Name="lblEditaSiglaCurso"
+            Text="SIGLA"/>
+            <Entry
+            x:Name="etrEditaSiglaCurso"
+            Placeholder="Escreva aqui"/>
+
+            <Label 
+            x:Name="lblEditaObsCurso"
+            Text="OBSERVAÇÕES"/>
+            <Entry
+            x:Name="etrEditaObsCurso"
+            Placeholder="Escreva aqui"/>
+
+            <Label
+            x:Name="lblEditaperiodoCurso"
+            Text="PERÍODO"/>
+            <Picker x:Name="pkrPeriodoCurso">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Exemplo 1</x:String>
+                        <x:String>Exemplo 2</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label 
+            x:Name="lblEditaPickerCurso"
+            Text="DISCIPLINAS"/>
+            <Picker x:Name="pkrEditaDisciplinasCurso">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Exemplo 1</x:String>
+                        <x:String>Exemplo 2</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button
+            x:Name="btnEditaConfirmaDisciplina"
+            Text="CONFIRMAR"/>
+
+            <Button
+            x:Name="btnEditaDescartaDisciplina"
+            Text="DESCARTAR"/>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

@@ -63,6 +63,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\cursos.xaml.cs">
+	    <DependentUpon>Cursos.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\disciplinas.xaml.cs">
+	    <DependentUpon>Disciplinas.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\periodos.xaml.cs">
+	    <DependentUpon>Periodos.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Pages\adicionarCurso.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -72,10 +84,10 @@
 	  <MauiXaml Update="Pages\adicionarPeriodo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\cursos.xaml">
+	  <MauiXaml Update="Pages\Cursos.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\disciplinas.xaml">
+	  <MauiXaml Update="Pages\Disciplinas.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\editarCurso.xaml">
@@ -96,7 +108,7 @@
 	  <MauiXaml Update="Pages\mostrarPeriodo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\periodos.xaml">
+	  <MauiXaml Update="Pages\Periodos.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\sobrePage.xaml">
