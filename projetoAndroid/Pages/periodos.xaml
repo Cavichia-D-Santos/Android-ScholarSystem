@@ -29,6 +29,10 @@
                 Clicked="OnClickPaginaAdicionarPeriodo"/>
 
             <Button
+                x:Name="btnExcluirPeriodo"
+                Text="EXCLUIR"/>
+
+            <Button
                 x:Name="btnModificarPeriodo"
                 Text="EDITAR"
                 Clicked="OnClickPaginaEditarPeriodo"/>
