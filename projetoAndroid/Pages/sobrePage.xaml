@@ -3,10 +3,104 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="projetoAndroid.Pages.sobrePage"
              Title="sobrePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="20">
+            <Image
+                    Source="logo_thiago.png"
+                    WidthRequest="160"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="Foto de perfil do aluno Thiago."/>
+
+            <Grid ColumnDefinitions="*, *"
+                  RowDefinitions="*, *, *"
+                  RowSpacing="15">
+                <Label 
+                    x:Name="lblNome"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="0"
+                    Text="Thiago Cavichia dos Santos"
+                    FontAttributes="Bold"
+                    FontSize="Title"
+                    HorizontalOptions="Center"/>
+                <Label
+                    x:Name="lblCurso"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    Text="Estudante de Ciência da Computação"
+                    FontAttributes="Italic"
+                    HorizontalTextAlignment="Center"/>
+
+                <Image
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Source="logogithub.png"
+                    WidthRequest="50">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedAbrirGithub"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    Source="logolinkedin.png"
+                    WidthRequest="50">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedAbrirLinkedin"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+
+            <Border BackgroundColor="RoyalBlue"
+                    StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="15"/>
+                </Border.StrokeShape>
+                <Grid RowDefinitions="*, *"
+                  Padding="10"
+                  RowSpacing="10">
+                    <Label
+                        x:Name="lblAppTitulo"
+                        Grid.Row="0"
+                        Text="Sobre o App:"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
+                    <Label
+                        x:Name="lblApp"
+                        Grid.Row="1"
+                        TextColor="white"
+                        Text="Projeto Android, feito com .NET MAUI, utilizando os conceitos CRUD para manipulação de cursos, disciplinas e períodos. Atividade para entrega da P1 como avaliação."/>
+                </Grid>
+            </Border>
+
+            <Label
+                x:Name="lblMateria"
+                Text="Projeto para a matéria de Desenvolvimento Mobile Android"
+                FontAttributes="Bold"
+                FontSize="Subtitle"
+                HorizontalTextAlignment="Center"/>
+
+            <Border Padding="10" Stroke="RoyalBlue">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="15"/>
+                </Border.StrokeShape>
+                <Label 
+                    x:Name="lblProfessor"
+                    Text="👨‍🏫 Professor: Juliano Marçal"/>
+            </Border>
+            <Border Padding="10" Stroke="RoyalBlue">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="15"/>
+                </Border.StrokeShape>
+                <Label 
+                    x:Name="lblFaculdade"
+                    Text="🎓 UniAnchieta - 3º Semestre"/>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>

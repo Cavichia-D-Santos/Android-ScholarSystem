@@ -13,19 +13,42 @@
             x:Name="etrNomePeriodo"
             Placeholder="Escreva aqui"/>
 
-        <Label 
-            x:Name="lblSiglaPeriodo"
-            Text="SIGLA"/>
-        <Entry
-            x:Name="etrSiglaPeriodo"
-            Placeholder="Escreva aqui"/>
+        <Grid RowDefinitions="*, *" ColumnDefinitions="*, *"
+              RowSpacing="1"
+              ColumnSpacing="20">
+            <Label
+                x:Name="lblIdPeriodo"
+                Text="ID"
+                Grid.Row="0"
+                Grid.Column="0"/>
+            <Entry
+                x:Name="etrIdPeriodo"
+                IsEnabled="False"
+                BackgroundColor="Grey"
+                Grid.Row="1"
+                Grid.Column="0"/>
+            
+            <Label 
+                x:Name="lblSiglaPeriodo"
+                Text="SIGLA"
+                Grid.Row="0"
+                Grid.Column="1"/>
+            <Entry
+                x:Name="etrSiglaPeriodo"
+                Placeholder="Escreva aqui"
+                Grid.Row="1"
+                Grid.Column="1"/>
+        </Grid>
+
 
         <Button
             x:Name="btnConfirmaPeriodo"
-            Text="CONFIRMAR"/>
+            Text="CONFIRMAR"
+            Clicked="OnClickPopupConfirmacao"/>
 
         <Button
             x:Name="btnDescartaPeriodo"
-            Text="DESCARTAR"/>
+            Text="DESCARTAR"
+            Clicked="OnClickPaginaConfirmaDelete"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -14,12 +14,32 @@
                 x:Name="etrNomeCurso"
                 Placeholder="Escreva aqui"/>
 
-            <Label 
-                x:Name="lblSiglaCurso"
-                Text="SIGLA"/>
-            <Entry
-                x:Name="etrSiglaCurso"
-                Placeholder="Escreva aqui"/>
+            <Grid RowDefinitions="*, *" ColumnDefinitions="*, *"
+              RowSpacing="1"
+              ColumnSpacing="20">
+                <Label
+                x:Name="lblIdCurso"
+                Text="ID"
+                Grid.Row="0"
+                Grid.Column="0"/>
+                <Entry
+                x:Name="etrIdCurso"
+                IsEnabled="False"
+                BackgroundColor="Grey"
+                Grid.Row="1"
+                Grid.Column="0"/>
+
+                <Label 
+                    x:Name="lblSiglaCurso"
+                    Text="SIGLA"
+                    Grid.Row="0"
+                    Grid.Column="1"/>
+                <Entry
+                    x:Name="etrSiglaCurso"
+                    Placeholder="Escreva aqui"
+                    Grid.Row="1"
+                    Grid.Column="1"/>
+            </Grid>
 
             <Label 
                 x:Name="lblObsCurso"
@@ -54,11 +74,13 @@
 
             <Button
                 x:Name="btnConfirmaDisciplina"
-                Text="CONFIRMAR"/>
+                Text="CONFIRMAR"
+                Clicked="OnClickPopupConfirmacao"/>
 
             <Button
                 x:Name="btnDescartaDisciplina"
-                Text="DESCARTAR"/>
+                Text="DESCARTAR"
+                Clicked="OnClickPaginaConfirmaDelete"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
