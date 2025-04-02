@@ -9,33 +9,64 @@
     Shell.TabBarIsVisible="True"
     Title="projetoAndroid">
 
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout Padding="30" Spacing="20"
+                             BackgroundColor="#faeb0c">
+            <Image
+                Source="livro.png"
+                WidthRequest="160"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Desenho de um livro"/>
+            <Label
+                x:Name="lblFlyoutHeader"
+                Text="SISTEMA ACADÊMICO"
+                FontSize="Title"
+                TextColor="Black"
+                HorizontalTextAlignment="Center"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
 
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
             Title="Página Principal"
             ContentTemplate="{DataTemplate local:MainPage}"
-            Route="mainPage" />
+            Route="mainPage"
+            Icon="home_img.png"/>
 
         <ShellContent
             Title="Períodos"
             ContentTemplate="{DataTemplate pages:periodos}"
-            Route="periodos" />
+            Route="periodos"
+            Icon="periodos_img.png"/>
 
         <ShellContent
             Title="Disciplinas"
             ContentTemplate="{DataTemplate pages:disciplinas}"
-            Route="disciplinas" />
+            Route="disciplinas"
+            Icon="disciplinas_img.png"/>
 
         <ShellContent
             Title="Cursos"
             ContentTemplate="{DataTemplate pages:cursos}"
-            Route="cursos" />
+            Route="cursos"
+            Icon="cursos_img.png"/>
 
         <ShellContent
             Title="Sobre"
             ContentTemplate="{DataTemplate pages:sobrePage}"
-            Route="sobre" />
+            Route="sobre"
+            Icon="sobre_img.png"/>
 
     </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout Padding="20" BackgroundColor="#faeb0c">
+            <Label
+                x:Name="lblFlyoutFooter"
+                Text="Copyright @Thiago,C."
+                HorizontalTextAlignment="Center"
+                TextColor="Black"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
 
 </Shell>

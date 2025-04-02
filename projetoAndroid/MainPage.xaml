@@ -4,52 +4,39 @@
              x:Class="projetoAndroid.MainPage">
 
     <ScrollView>
-        <Grid RowDefinitions="0.5*,0.5*,*,*,*" ColumnDefinitions="*,*" 
-            Padding="30,0" ColumnSpacing="10">
+        <VerticalStackLayout
+            Padding="30" Spacing="20">
 
             <Image
-                Source="anchieta_logo.png"
-                HeightRequest="180"
-                Aspect="AspectFit"
-                SemanticProperties.Description="logo da faculdade Anchieta"
-                Grid.Column="0"
-                Grid.RowSpan="2"/>
-
-            <Label
-                x:Name="lblFaculdadeNome"
-                Text="Faculdade UniAnchieta"
-                Grid.Column="1"
-                Grid.Row="0"
-                VerticalTextAlignment="End"/>
+                Source="utc_logo.png"
+                HeightRequest="250"
+                Aspect="AspectFill"
+                BackgroundColor="Transparent"
+                SemanticProperties.Description="logo da Universidade de Tecnologia e Ciências (sigla UTC)"
+                HorizontalOptions="Center"/>
 
             <Label
                 x:Name="lblBoasVindas"
-                Text="Bem vindo(a)"
-                Grid.Column="1"
-                Grid.Row="1"
-                VerticalTextAlignment="Center"/>
+                Text="Bem vindo(a)!"
+                HorizontalTextAlignment="Center"
+                FontSize="Title"
+                FontAttributes="Bold"/>
 
-            <Button
-                x:Name="btnTeste"
-                Text="[IMAGEM]"
-                Grid.ColumnSpan="2"
-                Grid.Row="2"
-                HeightRequest="100"/>
+            <Label
+                x:Name="lblEmConstrucao"
+                Text="Este app ainda está em construção."
+                FontSize="Small"
+                FontAttributes="Italic"
+                HorizontalTextAlignment="Center"/>
 
-            <Button
-                x:Name="btnTeste2"
-                Text="[IMAGEM]"
-                Grid.ColumnSpan="2"
-                Grid.Row="3"
-                HeightRequest="100"/>
+            <Image
+                Source="em_construcao.png"
+                HeightRequest="200"
+                VerticalOptions="End"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Placa de aviso com cones ao lado."/>
 
-            <Button
-                x:Name="btnTeste3"
-                Text="[IMAGEM]"
-                Grid.ColumnSpan="2"
-                Grid.Row="4"
-                HeightRequest="100"/>
-        </Grid>
+        </VerticalStackLayout>
     </ScrollView>
 
 </ContentPage>

@@ -7,25 +7,48 @@
     <VerticalStackLayout Padding="30"
                      Spacing="20">
         <Label 
-        x:Name="lblEditaNomePeriodo"
-        Text="NOME DO PERÍODO"/>
+            x:Name="lblEditaNomePeriodo"
+            Text="NOME DO PERÍODO"/>
         <Entry
-        x:Name="etrEditaNomePeriodo"
-        Placeholder="Escreva aqui"/>
+            x:Name="etrEditaNomePeriodo"
+            Placeholder="Escreva aqui"/>
 
-        <Label 
-        x:Name="lblEditaSiglaPeriodo"
-        Text="SIGLA"/>
-        <Entry
-        x:Name="etrEditaSiglaPeriodo"
-        Placeholder="Escreva aqui"/>
+        <Grid RowDefinitions="*, *" ColumnDefinitions="*, *"
+              RowSpacing="1"
+              ColumnSpacing="20">
+            <Label
+                x:Name="lblEditaIdPeriodo"
+                Text="ID"
+                Grid.Row="0"
+                Grid.Column="0"/>
+            <Entry
+                x:Name="etrEditaIdPeriodo"
+                IsEnabled="False"
+                BackgroundColor="Grey"
+                Grid.Row="1"
+                Grid.Column="0"/>
+
+            <Label 
+                x:Name="lblEditaSiglaPeriodo"
+                Text="SIGLA"
+                Grid.Row="0"
+                Grid.Column="1"/>
+            <Entry
+                x:Name="etrEditaSiglaPeriodo"
+                Placeholder="Escreva aqui"
+                Grid.Row="1"
+                Grid.Column="1"/>
+        </Grid>
+
+
+            <Button
+                x:Name="btnEditaConfirmaPeriodo"
+                Text="CONFIRMAR"
+                Clicked="OnClickPopupConfirmacao"/>
 
         <Button
-        x:Name="btnEditaConfirmaPeriodo"
-        Text="CONFIRMAR"/>
-
-        <Button
-        x:Name="btnEditaDescartaPeriodo"
-        Text="DESCARTAR"/>
+            x:Name="btnEditaDescartaPeriodo"
+            Text="DESCARTAR"
+            Clicked="OnClickPaginaConfirmaDelete"/>
     </VerticalStackLayout>
 </ContentPage>
