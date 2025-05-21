@@ -8,34 +8,55 @@
         <VerticalStackLayout Padding="20"
                              Spacing="20">
 
-            <Entry
-                x:Name="etrPeriodos"
-                Placeholder="Pesquise aqui"/>
+            <SearchBar
+                x:Name="scbarPeriodo"
+                Placeholder="Pesquisar um período"
+                TextChanged="scbarPeriodo_TextChanged"/>
 
-                <Label 
+            <Label 
                 x:Name="lblPeriodos"
                 Text="Períodos"
                 FontAttributes="Bold"
                 FontSize="Title"/>
 
-            <BoxView
-                x:Name="bxvGuardandoCaixao"
-                HeightRequest="200"
-                Color="LightGray"/>
+            <ListView x:Name="lstPeriodos">
+                <ListView.Header>
+                    <Grid ColumnDefinitions="*,*">
+                        <Label Grid.Column="0" Text="Id"/>
+                        <Label Grid.Column="1" Text="Nome"/>
+                    </Grid>
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Alterar" Clicked="MenuAlterar_Clicked"/>
+                                <MenuItem Text="Remover" Clicked="MenuRemover_Clicked"/>
+                            </ViewCell.ContextActions>
+
+                            <Grid ColumnDefinitions="*,*">
+                                <Label Grid.Column="0" Text="{Binding Id}"/>
+                                <Label Grid.Column="1" Text="{Binding Nome}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
             <Button
                 x:Name="btnAddPeriodo"
                 Text="+ ADICIONAR"
-                Clicked="OnClickPaginaAdicionarPeriodo"/>
+                Clicked="PaginaAdicionarPeriodo_Clicked"/>
 
-            <Button
+           <!--<Button
                 x:Name="btnExcluirPeriodo"
                 Text="EXCLUIR"/>
 
             <Button
                 x:Name="btnModificarPeriodo"
                 Text="EDITAR"
-                Clicked="OnClickPaginaEditarPeriodo"/>
+                Clicked="PaginaEditarPeriodo_Clicked"/> -->
 
         </VerticalStackLayout>
     </ScrollView>
