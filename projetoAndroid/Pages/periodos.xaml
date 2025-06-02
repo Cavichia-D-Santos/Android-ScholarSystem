@@ -32,12 +32,16 @@
                         <ViewCell>
                             <ViewCell.ContextActions>
                                 <MenuItem Text="Alterar" Clicked="MenuAlterar_Clicked"/>
-                                <MenuItem Text="Remover" Clicked="MenuRemover_Clicked"/>
+                                <!--<MenuItem Text="Remover" Clicked="MenuRemover_Clicked"/>-->
                             </ViewCell.ContextActions>
 
-                            <Grid ColumnDefinitions="*,*">
+                            <Grid ColumnDefinitions="*,*,*">
                                 <Label Grid.Column="0" Text="{Binding Id}"/>
                                 <Label Grid.Column="1" Text="{Binding Nome}"/>
+                                <ImageButton Grid.Column="2"
+                                             Source="menu.png"
+                                             Clicked="MenuRemover_Clicked"
+                                             HeightRequest="25"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

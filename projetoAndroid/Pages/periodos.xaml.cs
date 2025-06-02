@@ -41,16 +41,18 @@ namespace projetoAndroid.Pages
 
 		private async void MenuRemover_Clicked(object sender, EventArgs e)
 		{
-			MenuItem selecionado = sender as MenuItem;
-			Periodo p = selecionado.BindingContext as Periodo;
+			var botao = sender as ImageButton;
+			var selecionaPeriodo = botao.BindingContext as Periodo;
 
-			bool confirma = await DisplayAlert("ATENÇÃO", "Confirma a remoção?", "Sim", "Não");
-
-			if(confirma == true)
+			if(selecionaPeriodo != null)
 			{
-				await App.Db.Delete(p.Id);
-				lista.Remove(p);
-				await DisplayAlert("SUCESSO", "Item removido.", "OK");
+				bool confirma = await DisplayAlert("ATENÇÃO", "Confirma a remoção?", "Sim", "Não");
+
+				if(confirma == true)
+				{
+					await App.Db.Delete(selecionaPeriodo.Id);
+					lista.Remove(selecionaPeriodo);
+				}
 			}
 		}
 
