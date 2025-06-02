@@ -19,15 +19,16 @@ public partial class adicionarPeriodo : ContentPage
 		{
 			Periodo p = new Periodo();
 			p.Nome = etrNome.Text;
+			p.Sigla = etrSigla.Text;
 
 			await App.Db.Insert(p);
 			await DisplayAlert("SUCESSO", "Registro inserido", "OK");
 			await Navigation.PopAsync();
 		}
 	}
+
+    private void BtnCancelar_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PopAsync();
+    }
 }
-
-/*var deletePagina = new confirmaDelete();
-await Navigation.PushModalAsync(deletePagina);
-
-deletePagina.IsVisible = true;*/

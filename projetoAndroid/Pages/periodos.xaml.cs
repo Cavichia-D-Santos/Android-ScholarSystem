@@ -18,10 +18,6 @@ namespace projetoAndroid.Pages
 			await Navigation.PushAsync(new adicionarPeriodo());
 		}
 
-		private async void PaginaEditarPeriodo_Clicked(object sender, EventArgs e)
-		{
-			await Navigation.PushAsync(new editarPeriodo());
-		}
 		//DADOS
 		protected async override void OnAppearing()
 		{
@@ -34,25 +30,25 @@ namespace projetoAndroid.Pages
 			}
 		}
 
-		private async void MenuAlterar_Clicked(object sender, EventArgs e)
-		{
-			//Periodo p = new Periodo();
-		}
+		private void MenuAlterar_Clicked(object sender, EventArgs e)
+        {
+			MenuItem selecionado = sender as MenuItem;
+			Periodo p = selecionado.BindingContext as Periodo;
 
-		private async void MenuRemover_Clicked(object sender, EventArgs e)
-		{
-			var botao = sender as ImageButton;
-			var selecionaPeriodo = botao.BindingContext as Periodo;
+			Navigation.PushAsync(new Views.editarPeriodo { BindingContext = p });
+        }
 
-			if(selecionaPeriodo != null)
+        private async void MenuRemover_Clicked(object sender, EventArgs e)
+		{
+			MenuItem selecionado = sender as MenuItem;
+			Periodo p = selecionado.BindingContext as Periodo;
+            bool confirma = await DisplayAlert("ATENÇÃO", "Confirma a remoção?", "Sim", "Não");
+
+            if (confirma == true)
 			{
-				bool confirma = await DisplayAlert("ATENÇÃO", "Confirma a remoção?", "Sim", "Não");
-
-				if(confirma == true)
-				{
-					await App.Db.Delete(selecionaPeriodo.Id);
-					lista.Remove(selecionaPeriodo);
-				}
+				await App.Db.Delete(p.Id);
+				lista.Remove(p);
+				await DisplayAlert("REMOÇÃO", "Registro removido com sucesso.", "OK");
 			}
 		}
 

@@ -13,8 +13,8 @@
             x:Name="etrEditaNomePeriodo"
             Placeholder="Escreva aqui"/>
 
-        <Grid RowDefinitions="*, *" ColumnDefinitions="*, *"
-              RowSpacing="1"
+        <Grid RowDefinitions="*,*" ColumnDefinitions="*,*"
+              RowSpacing="10"
               ColumnSpacing="20">
             <Label
                 x:Name="lblEditaIdPeriodo"
@@ -40,15 +40,20 @@
                 Grid.Column="1"/>
         </Grid>
 
-
+        <Grid ColumnDefinitions="*,*"
+              Padding="20"
+              ColumnSpacing="20">
             <Button
+                Grid.Column="0"
                 x:Name="btnEditaConfirmaPeriodo"
                 Text="CONFIRMAR"
-                Clicked="OnClickPopupConfirmacao"/>
+                Clicked="ConfirmaEdicao_Clicked"/>
 
-        <Button
-            x:Name="btnEditaDescartaPeriodo"
-            Text="DESCARTAR"
-            Clicked="OnClickPaginaConfirmaDelete"/>
+            <Button
+                Grid.Column="1"
+                x:Name="btnEditaDescartaPeriodo"
+                Text="DESCARTAR"
+                Clicked="BtnVoltar_Clicked"/>
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>

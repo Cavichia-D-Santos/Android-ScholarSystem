@@ -21,9 +21,10 @@
 
             <ListView x:Name="lstPeriodos">
                 <ListView.Header>
-                    <Grid ColumnDefinitions="*,*">
+                    <Grid ColumnDefinitions="*,*,*">
                         <Label Grid.Column="0" Text="Id"/>
                         <Label Grid.Column="1" Text="Nome"/>
+                        <Label Grid.Column="2" Text="Sigla"/>
                     </Grid>
                 </ListView.Header>
 
@@ -32,16 +33,13 @@
                         <ViewCell>
                             <ViewCell.ContextActions>
                                 <MenuItem Text="Alterar" Clicked="MenuAlterar_Clicked"/>
-                                <!--<MenuItem Text="Remover" Clicked="MenuRemover_Clicked"/>-->
+                                <MenuItem Text="Remover" Clicked="MenuRemover_Clicked"/>
                             </ViewCell.ContextActions>
 
                             <Grid ColumnDefinitions="*,*,*">
                                 <Label Grid.Column="0" Text="{Binding Id}"/>
                                 <Label Grid.Column="1" Text="{Binding Nome}"/>
-                                <ImageButton Grid.Column="2"
-                                             Source="menu.png"
-                                             Clicked="MenuRemover_Clicked"
-                                             HeightRequest="25"/>
+                                <Label Grid.Column="2" Text="{Binding Sigla}"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
@@ -52,15 +50,6 @@
                 x:Name="btnAddPeriodo"
                 Text="+ ADICIONAR"
                 Clicked="PaginaAdicionarPeriodo_Clicked"/>
-
-           <!--<Button
-                x:Name="btnExcluirPeriodo"
-                Text="EXCLUIR"/>
-
-            <Button
-                x:Name="btnModificarPeriodo"
-                Text="EDITAR"
-                Clicked="PaginaEditarPeriodo_Clicked"/> -->
 
         </VerticalStackLayout>
     </ScrollView>

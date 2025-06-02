@@ -8,34 +8,48 @@
         <VerticalStackLayout Padding="20"
                              Spacing="20">
 
-            <Entry
-            x:Name="etrDisciplinas"
-            Placeholder="Pesquise aqui"/>
+            <SearchBar
+                x:Name="scbarDisciplina"
+                Placeholder="Pesquisar uma disciplina"
+                TextChanged="scbarDisciplina_TextChanged"/>
 
             <Label 
-            x:Name="lblDisciplinas"
-            Text="Disciplinas"
-            FontAttributes="Bold"
-            FontSize="Title"/>
+                x:Name="lblDisciplinas"
+                Text="Disciplinas"
+                FontAttributes="Bold"
+                FontSize="Title"/>
 
-            <BoxView
-            x:Name="bxvGuardandoCaixao2"
-            HeightRequest="200"
-            Color="LightGray"/>
+            <ListView x:Name="lstDisciplinas">
+                <ListView.Header>
+                    <Grid ColumnDefinitions="*,*,*">
+                        <Label Grid.Column="0" Text="Id"/>
+                        <Label Grid.Column="1" Text="Nome"/>
+                        <Label Grid.Column="2" Text="Sigla"/>
+                    </Grid>
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Alterar" Clicked="MenuAlterar_Clicked"/>
+                                <MenuItem Text="Remover" Clicked="MenuRemover_Clicked"/>
+                            </ViewCell.ContextActions>
+
+                            <Grid ColumnDefinitions="*,*,*">
+                                <Label Grid.Column="0" Text="{Binding Id}"/>
+                                <Label Grid.Column="1" Text="{Binding Nome}"/>
+                                <Label Grid.Column="2" Text="{Binding Sigla}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
             <Button
-            x:Name="btnAddDisciplina"
-            Text="+ ADICIONAR"
-            Clicked="OnClickPaginaAdicionarDisciplina"/>
-
-            <Button
-                x:Name="btnExcluirDisciplina"
-                Text="EXCLUIR"/>
-
-            <Button
-            x:Name="btnModificarDisciplina"
-            Text="EDITAR"
-            Clicked="OnClickPaginaEditarDisciplina"/>
+                x:Name="btnAddPeriodo"
+                Text="+ ADICIONAR"
+                Clicked="PaginaAdicionaDisciplina_Clicked"/>
 
         </VerticalStackLayout>
     </ScrollView>

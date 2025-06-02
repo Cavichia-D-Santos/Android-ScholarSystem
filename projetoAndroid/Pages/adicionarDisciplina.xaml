@@ -42,18 +42,17 @@
         <Label 
             x:Name="lblObsDisciplina"
             Text="OBSERVAÇÕES"/>
-        <Entry
-            x:Name="etrObsDisciplina"
-            Placeholder="Escreva aqui"/>
+        <Editor
+                x:Name="edtObs"/>
 
         <Button
-            x:Name="btnConfirmaDisciplina"
+            x:Name="btnConfirma"
             Text="CONFIRMAR"
-            Clicked="OnClickPopupConfirmacao"/>
+            Clicked="BtnInserir_Clicked"/>
 
         <Button
-            x:Name="btnDescartaDisciplina"
-            Text="DESCARTAR"
-            Clicked="OnClickPaginaConfirmaDelete"/>
+            x:Name="btnCancelar"
+            Text="CANCELAR"
+            Clicked="BtnCancelar_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>

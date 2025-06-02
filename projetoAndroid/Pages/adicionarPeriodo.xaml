@@ -27,7 +27,7 @@
                 BackgroundColor="Grey"
                 Grid.Row="1"
                 Grid.Column="0"/>
-            
+
             <Label 
                 x:Name="lblSigla"
                 Text="SIGLA"
@@ -40,14 +40,14 @@
                 Grid.Column="1"/>
         </Grid>
 
-
         <Button
             x:Name="btnConfirmar"
             Text="CONFIRMAR"
             Clicked="btnInserir_Clicked"/>
 
         <Button
-            x:Name="btnDescartar"
-            Text="DESCARTAR"/>
+            x:Name="btnCancelar"
+            Text="CANCELAR"
+            Clicked="BtnCancelar_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>
