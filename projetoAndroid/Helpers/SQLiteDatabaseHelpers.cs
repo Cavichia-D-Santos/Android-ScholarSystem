@@ -17,8 +17,8 @@ namespace projetoAndroid.Helpers
 		}
 		public Task<List<Periodo>> Update(Periodo p)
 		{
-			string sql = "UPDATE Periodo SET Id=?, Nome=? WHERE Id=?"; //Forma 2 escrevendo a mao
-			return connection.QueryAsync<Periodo>(sql, p.Id, p.Nome, p.Id);
+			string sql = "UPDATE Periodo SET Id=?, Nome=?, Sigla=? WHERE Id=?"; //Forma 2 escrevendo a mao
+			return connection.QueryAsync<Periodo>(sql, p.Id, p.Nome, p.Sigla, p.Id);
 		}
 		public Task <List<Periodo>> Delete(int Id)
 		{
