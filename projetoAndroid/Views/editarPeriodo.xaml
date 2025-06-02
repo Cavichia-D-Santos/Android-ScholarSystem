@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="projetoAndroid.Pages.editarPeriodo"
+             x:Class="projetoAndroid.Views.editarPeriodo"
              Title="editarPeriodo">
 
     <VerticalStackLayout Padding="30"
                      Spacing="20">
         <Label 
-            x:Name="lblEditaNomePeriodo"
+            x:Name="lblNomePeriodo"
             Text="NOME DO PERÍODO"/>
         <Entry
-            x:Name="etrEditaNomePeriodo"
-            Placeholder="Escreva aqui"/>
+            x:Name="etrNomePeriodo"
+            Text="{Binding Nome}"/>
 
         <Grid RowDefinitions="*,*" ColumnDefinitions="*,*"
               RowSpacing="10"
               ColumnSpacing="20">
             <Label
-                x:Name="lblEditaIdPeriodo"
+                x:Name="lblIdPeriodo"
                 Text="ID"
                 Grid.Row="0"
                 Grid.Column="0"/>
             <Entry
-                x:Name="etrEditaIdPeriodo"
+                x:Name="etrIdPeriodo"
                 IsEnabled="False"
+                Text="{Binding Id}"
                 BackgroundColor="Grey"
                 Grid.Row="1"
                 Grid.Column="0"/>
 
             <Label 
-                x:Name="lblEditaSiglaPeriodo"
+                x:Name="lblSiglaPeriodo"
                 Text="SIGLA"
                 Grid.Row="0"
                 Grid.Column="1"/>
             <Entry
-                x:Name="etrEditaSiglaPeriodo"
-                Placeholder="Escreva aqui"
+                x:Name="etrSiglaPeriodo"
+                Text="{Binding Sigla}"
                 Grid.Row="1"
                 Grid.Column="1"/>
         </Grid>
@@ -45,15 +46,16 @@
               ColumnSpacing="20">
             <Button
                 Grid.Column="0"
-                x:Name="btnEditaConfirmaPeriodo"
+                x:Name="btnConfirmaEdicao"
                 Text="CONFIRMAR"
-                Clicked="ConfirmaEdicao_Clicked"/>
+                Clicked="BtnAlterar_Clicked"/>
 
             <Button
                 Grid.Column="1"
-                x:Name="btnEditaDescartaPeriodo"
-                Text="DESCARTAR"
-                Clicked="BtnVoltar_Clicked"/>
+                x:Name="btnCancelarEdicao"
+                Text="CANCELAR"
+                Clicked="BtnCancelar_Clicked"/>
+            
         </Grid>
     </VerticalStackLayout>
 </ContentPage>

@@ -1,3 +1,5 @@
+using projetoAndroid.Model;
+
 namespace projetoAndroid.Pages;
 
 public partial class adicionarDisciplina : ContentPage
@@ -6,17 +8,20 @@ public partial class adicionarDisciplina : ContentPage
 	{
 		InitializeComponent();
 	}
-    private async void OnClickPaginaConfirmaDelete(object sender, EventArgs e)
+    private async void BtnInserir_Clicked(object sender, EventArgs e)
     {
-        var deletePagina = new confirmaDelete();
-        await Navigation.PushModalAsync(deletePagina);
-        deletePagina.IsVisible = true;
+        Disciplina p = new Disciplina();
+        p.Nome = etrNomeDisciplina.Text;
+        p.Sigla = etrSiglaDisciplina.Text;
+        p.Obs = edtObs.Text;
+
+        await App.DbDisc.Insert(p);
+        await DisplayAlert("SUCESSO", "Registro inserido", "OK");
+        await Navigation.PopAsync();
     }
-    private void OnClickPopupConfirmacao(object sender, EventArgs e)
+
+    private void BtnCancelar_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("", "DISCIPLINA ADICIONADA COM SUCESSO", "VOLTAR");
-        etrNomeDisciplina.Text = "";
-        etrSiglaDisciplina.Text = "";
-        etrObsDisciplina.Text = "";
+        Navigation.PopAsync();
     }
 }

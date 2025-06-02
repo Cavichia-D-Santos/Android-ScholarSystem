@@ -7,48 +7,47 @@
     <VerticalStackLayout Padding="30"
                          Spacing="20">
         <Label 
-            x:Name="lblNomePeriodo"
+            x:Name="lblNome"
             Text="NOME DO PERÍODO"/>
         <Entry
-            x:Name="etrNomePeriodo"
+            x:Name="etrNome"
             Placeholder="Escreva aqui"/>
 
         <Grid RowDefinitions="*, *" ColumnDefinitions="*, *"
               RowSpacing="1"
               ColumnSpacing="20">
             <Label
-                x:Name="lblIdPeriodo"
+                x:Name="lblId"
                 Text="ID"
                 Grid.Row="0"
                 Grid.Column="0"/>
             <Entry
-                x:Name="etrIdPeriodo"
+                x:Name="etrId"
                 IsEnabled="False"
                 BackgroundColor="Grey"
                 Grid.Row="1"
                 Grid.Column="0"/>
-            
+
             <Label 
-                x:Name="lblSiglaPeriodo"
+                x:Name="lblSigla"
                 Text="SIGLA"
                 Grid.Row="0"
                 Grid.Column="1"/>
             <Entry
-                x:Name="etrSiglaPeriodo"
+                x:Name="etrSigla"
                 Placeholder="Escreva aqui"
                 Grid.Row="1"
                 Grid.Column="1"/>
         </Grid>
 
-
         <Button
-            x:Name="btnConfirmaPeriodo"
+            x:Name="btnConfirmar"
             Text="CONFIRMAR"
-            Clicked="OnClickPopupConfirmacao"/>
+            Clicked="btnInserir_Clicked"/>
 
         <Button
-            x:Name="btnDescartaPeriodo"
-            Text="DESCARTAR"
-            Clicked="OnClickPaginaConfirmaDelete"/>
+            x:Name="btnCancelar"
+            Text="CANCELAR"
+            Clicked="BtnCancelar_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>
